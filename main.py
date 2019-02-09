@@ -27,10 +27,9 @@ from sklearn.model_selection import train_test_split
 #steps_per_epoch = TotalTrainingSamples / TrainingBatchSize
 #validation_steps = TotalvalidationSamples / ValidationBatchSize
 
-#BREED_NUM = 120
-#EPOCHS_NUM = 30
-BREED_NUM = 2
-EPOCHS_NUM = 1
+BREED_NUM = 120
+EPOCHS_NUM = 8
+
 
 
 #Dimensions (height x weight) to be no smaller than 75
@@ -66,9 +65,10 @@ print ('x_validation shape = ', x_validation.shape)
 train_sample_size, n, p, q = x_train.shape
 validation_sample_size, n, p, q = x_validation.shape
 
-VALIDATION_STEPS = int(validation_sample_size / BATCH_SIZE)
-STEPS_PER_EPOCH = int(train_sample_size / BATCH_SIZE)
+VALIDATION_STEPS = validation_sample_size // BATCH_SIZE
+STEPS_PER_EPOCH = train_sample_size // BATCH_SIZE
 
+print(VALIDATION_STEPS)
 
 # Need to convert the prediction train and test labels into one hot encoded format
 y_train = pd.get_dummies(y_train.reset_index(drop=True)).as_matrix()
@@ -84,8 +84,6 @@ train_datagen = ImageDataGenerator(rescale=1./255,
                                    rotation_range=30,
                                    width_shift_range=0.2,
                                    height_shift_range=0.2,
-                                   shear_range=0.2,
-                                   zoom_range=0.2,
                                    horizontal_flip = 'true')
 train_generator = train_datagen.flow(x_train, y_train, shuffle=False, batch_size=BATCH_SIZE, seed=10)
 

@@ -28,7 +28,7 @@ from sklearn.model_selection import train_test_split
 #validation_steps = TotalvalidationSamples / ValidationBatchSize
 
 BREED_NUM = 120
-EPOCHS_NUM = 8
+EPOCHS_NUM = 1
 
 
 

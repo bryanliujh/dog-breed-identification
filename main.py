@@ -11,10 +11,10 @@ from tqdm import tqdm
 import cv2
 from sklearn.model_selection import train_test_split
 
-#The goal of this kaggle competition is to minimise log loss between the predicted probability and observed target
-#The submission will be a predictions of probability each dog will belong to a certain breed (e.g sample_submission.csv)
-#After submission kaggle will do the calculation of the log loss automatically
-#There are a total of 120 breeds of dogs
+#The goal of this kaggle competition is to maximise the MeanFScore, which at Kaggle is actually a micro-averaged F1-score.
+#The submission will be the labelling of each image in the test folder to their corresponding plant species in a CSV format
+#After submission kaggle will do the calculation of the MeanFScore automatically
+#There are a total of 12 plant species
 
 #what parameters to choose? https://www.kaggle.com/c/dog-breed-identification/discussion/46201
 #https://www.kaggle.com/c/dog-breed-identification/discussion/43203

@@ -56,5 +56,5 @@ model.compile(optimizer='Adadelta',
               metrics=['accuracy'])
 
 STEPS_PER_EPOCH = len(train_img) // batch_size
-model.fit_generator(datagen.flow(train_img, train_label, batch_size=batch_size), steps_per_epoch=10,  epochs=10, verbose=1)
+model.fit_generator(datagen.flow(train_img, train_label, batch_size=batch_size), steps_per_epoch=STEPS_PER_EPOCH,  epochs=10, verbose=1)
 model.save_weights('Xception.h5')

@@ -3,7 +3,7 @@ import numpy as np
 import cv2
 from tqdm import tqdm
 
-from config import *
+from old_plant.config import *
 
 def create_mask_for_plant(image):
     image_hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)

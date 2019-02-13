@@ -5,11 +5,9 @@ from keras.models import Model
 from keras.applications.xception import Xception, preprocess_input
 from keras.preprocessing import image
 from keras.layers import Dense, GlobalAveragePooling2D, Dropout
-from keras import backend as K
-from keras.callbacks import ReduceLROnPlateau
 from keras.preprocessing.image import ImageDataGenerator
 
-from config import *
+from old_plant.config import *
 
 
 datagen = ImageDataGenerator(preprocessing_function=preprocess_input,

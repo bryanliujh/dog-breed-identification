@@ -1,19 +1,14 @@
 import os
-import cv2
 from tqdm import tqdm
 from keras.models import Model
 from keras.applications.xception import *
-from keras.preprocessing import image
 from keras.utils import np_utils
-from keras.layers import Dropout, Dense, Input, Activation, GlobalAveragePooling2D
-from keras.layers.normalization import BatchNormalization
-from keras import backend as K
-from keras.callbacks import ReduceLROnPlateau
+from keras.layers import Dropout, Dense, GlobalAveragePooling2D
 from keras.preprocessing.image import ImageDataGenerator
 import numpy as np 
 from scipy.misc import imread, imresize
 
-from config import *
+from old_plant.config import *
 
 
 batch_size = 16

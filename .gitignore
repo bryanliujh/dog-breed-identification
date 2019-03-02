@@ -1,5 +1,5 @@
-*.jpg
+/images
 .idea
 /venv
 /old
-*.png
+/old_plant
